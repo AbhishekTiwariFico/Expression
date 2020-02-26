@@ -1,8 +1,11 @@
 package com.token;
 
 import com.exception.InvalidOperatorException;
+import com.exception.InvalidUnaryOperatorException;
 import com.exception.MultipleDotInNumberException;
+import com.exception.SystemException;
 import com.operatorclass.BinaryOperator;
+import com.operatorclass.UnaryOperator;
 
 import java.util.ArrayList;
 
@@ -10,8 +13,6 @@ public class Tokenizer {
 
     String expression = new String();
     ArrayList<String> token = new ArrayList<String>();
-    String str = "";
-    private int count = 0;
     public Tokenizer(String expression)
     {
        this.expression = expression;
@@ -19,64 +20,56 @@ public class Tokenizer {
 
     BinaryOperator list = new BinaryOperator();
     public ArrayList<String> binaryData = list.getData();
+    UnaryOperator l = new UnaryOperator();
+    public ArrayList<String> unaryData = l.getData();
     public ArrayList getToken() {
         char[] ch = expression.toCharArray();
-        for (char chh : ch) {
-            if ((Character.isDigit(chh)) || (chh == '.'))
-            {
-                if((chh == '.'))
-                {
-                    count++;
-                }
-                if(count>1)
-                {
-                    throw new MultipleDotInNumberException("it is not a currect type number contain more than one point in number");
-                }
-                str += chh;
+        for(int i=0;i<ch.length;i++) {
+            String current = String.valueOf(ch[i]);
+            if(current.equals("(")){
+                token.add(current);
             }
-            else if(binaryData.contains(String.valueOf(chh)))
-            {
-                if (str != "")
-                {
-                    token.add(str);
-                    str = ""; count = 0;
-                }
-                if (chh == '$')
-                {
-                    continue;
-                }
-                token.add(String.valueOf(chh));
-
-               }
-            else if(chh =='(')
-            {
-                if (str != "")
-                {
-                    token.add(str);
-                    str = ""; count = 0;
-                }
-                token.add(String.valueOf(chh));
+            else if(current.equals(")")) {
+                token.add(current);
             }
-            else if(chh ==')')
-            {
-                if (str != "")
-                {
-                    token.add(str);
-                    str = ""; count = 0;
-                }
-                token.add(String.valueOf(chh));
+            else if(ch[i] == ' ') {
+                continue;
             }
-            else if(chh == ' ')
+            else if(ch[i] == '-') {
+                if(i==0 || (unaryData.contains(String.valueOf(ch[i-1])) || binaryData.contains(String.valueOf(ch[i-1]))) ) {
+                    token.add("0");
+                }
+                token.add("-");
+            }
+            else if(ch[i]=='.' || (ch[i]>='0' && ch[i] <='9')  ) {
+                String curr = "";
+                while(i<ch.length && (ch[i]=='.' || (ch[i]>='0' && ch[i] <='9'))) {
+                    curr = curr + String.valueOf(ch[i++]);
+                }
+                if(i != ch.length-1) {
+                    i--;
+                }
+                token.add(curr);
+                continue;
+            }
+            else if((ch[i] >= 'a' && ch[i]<='z')){
+                String curr = "";
+                while (i<ch.length && (ch[i] >= 'a' && ch[i]<='z')) {
+                    curr = curr + String.valueOf(ch[i++]);
+                }
+                if(i!=ch.length-1) {
+                    i--;
+                }
+                token.add(curr);
+            }
+            else if(ch[i] == '$')
             {
                 continue;
             }
             else {
-                throw new InvalidOperatorException("It is not a Valid Operator not consumed by system");
+                token.add(current);
             }
-   }
-        System.out.println(str);
-        System.out.println(token);
-        System.out.println(binaryData);
-        return token;
+        }
+       return token;
     }
-    }
+}

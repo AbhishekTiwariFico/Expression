@@ -6,7 +6,7 @@ public class UnaryOperator extends Operator {
     ArrayList<String> unaryList = new ArrayList<String>();
     @Override
     public ArrayList getData() {
-        unaryList.add("Sin");
+        unaryList.add("sin");
         unaryList.add("cos");
 
         return unaryList;

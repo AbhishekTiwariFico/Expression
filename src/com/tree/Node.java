@@ -2,7 +2,7 @@ package com.tree;
 
 public class Node {
     public String value;
-    Node left, right;
+    public Node left, right;
 
     public Node(String item)
     {

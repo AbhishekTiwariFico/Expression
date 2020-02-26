@@ -1,34 +1,76 @@
 package com.evalution;
-
 import com.operatorclass.BinaryOperator;
+import com.operatorclass.UnaryOperator;
 import com.tree.Node;
 
 import java.util.ArrayList;
 
 public class BinaryEvalution {
+
+    double left;
+    double right;
     BinaryOperator b = new BinaryOperator();
-    ArrayList<String> a =b.getData();
-
-    public static boolean isNumeric(String strNum) {
-        if (strNum == null) {
-            return false;
-        }
-        try {
-            double d = Double.parseDouble(strNum);
-        }
-        catch (NumberFormatException nfe) {
-            return false;
-        }
-        return true;
+    ArrayList<String> binary =b.getData();
+    UnaryOperator u = new UnaryOperator();
+    ArrayList<String> unary =u.getData();
+    public double toDigit(String ch) {
+        return Double.parseDouble(ch);
     }
 
-    public void evaluate(Node root)
+    public double evaluate(Node n)
     {
-        //System.out.println("\ntree  " + root.value);
-        if(isNumeric(root.value)){
+        double result = 0.0;
+                if (n.left == null && n.right == null)
+                    return toDigit(n.value);
+                else {
 
-        }
-        if()
+                    if(binary.contains(n.value)) {
+                        left = evaluate(n.left);
+                        right = evaluate(n.right);
+                    }
+                    else
+                    {
+                        left = evaluate(n.left);
+                    }
+                    String operator = n.value;
+                    if (binary.contains(operator)) {
+                        switch (operator) {
+                            case "+":
+                                result = left + right;
+                                break;
+                            case "-":
+                                result = left - right;
+                                break;
+                            case "*":
+                                result = left * right;
+                                break;
+                            case "/":
+                                result = left / right;
+                                break;
+                            case "^":
+                                result = Integer.parseInt(String.valueOf(left)) ^ Integer.parseInt(String.valueOf(right));
+                                break;
+                        }
+                    }
+                       else if(unary.contains(operator))
+                        {
 
-    }
-}
+                            switch (operator)
+                            {
+
+                                case "sin":
+                                    result = Math.sin(Math.toRadians(left));
+                                break;
+                                case "cos":
+                                    result = Math.cos(Math.toRadians(left));
+                            }
+
+
+                        }
+                    }
+                        return result;
+
+                }
+            }
+
+

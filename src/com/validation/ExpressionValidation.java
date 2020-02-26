@@ -15,11 +15,11 @@ public class ExpressionValidation {
     {
         for(int i = 0; i< token.size() ;i++)
         {
-            if(new String(token.get(i)).equals("("))
+            if((token.get(i)).equals("("))
             {
                 countLeft++;
             }
-            if(new String(token.get(i)).equals(")"))
+            if((token.get(i)).equals(")"))
             {
                 countRight++;
             }
