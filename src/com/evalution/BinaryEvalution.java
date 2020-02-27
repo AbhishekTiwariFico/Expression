@@ -30,7 +30,7 @@ public class BinaryEvalution {
                     }
                     else
                     {
-                        left = evaluate(n.left);
+                        right = evaluate(n.right);
                     }
                     String operator = n.value;
                     if (binary.contains(operator)) {
@@ -59,10 +59,10 @@ public class BinaryEvalution {
                             {
 
                                 case "sin":
-                                    result = Math.sin(Math.toRadians(left));
+                                    result = Math.sin(Math.toRadians(right));
                                 break;
                                 case "cos":
-                                    result = Math.cos(Math.toRadians(left));
+                                    result = Math.cos(Math.toRadians(right));
                             }
 
 

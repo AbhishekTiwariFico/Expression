@@ -29,6 +29,7 @@ public class TreeCreation {
         Stack<Node> st = new Stack();
         Node t = null, t1 = null, t2 = null;
         for (int i = 0; i < postfix.size(); i++) {
+
             if ((binary.contains(postfix.get(i)))) {
                 t = new Node(postfix.get(i));
                 try {
@@ -53,7 +54,7 @@ public class TreeCreation {
                 {
                     throw new InvalidExpressionException("it not contains proper operator and operand");
                 }
-                t.left = t1;
+                t.right = t1;
                 st.push(t);
             } else {
 

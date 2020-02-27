@@ -1,9 +1,5 @@
 package com.token;
-
-import com.exception.InvalidOperatorException;
-import com.exception.InvalidUnaryOperatorException;
 import com.exception.MultipleDotInNumberException;
-import com.exception.SystemException;
 import com.operatorclass.BinaryOperator;
 import com.operatorclass.UnaryOperator;
 
@@ -12,6 +8,7 @@ import java.util.ArrayList;
 public class Tokenizer {
 
     String expression = new String();
+    private int count = 0 ;
     ArrayList<String> token = new ArrayList<String>();
     public Tokenizer(String expression)
     {
@@ -36,15 +33,28 @@ public class Tokenizer {
                 continue;
             }
             else if(ch[i] == '-') {
-                if(i==0 || (unaryData.contains(String.valueOf(ch[i-1])) || binaryData.contains(String.valueOf(ch[i-1]))) ) {
-                    token.add("0");
-                }
+//                if(i==0 || (unaryData.contains(String.valueOf(ch[i-1])) || binaryData.contains(String.valueOf(ch[i-1]))) ) {
+//                    token.add("0");
+//                }
                 token.add("-");
             }
             else if(ch[i]=='.' || (ch[i]>='0' && ch[i] <='9')  ) {
                 String curr = "";
+
                 while(i<ch.length && (ch[i]=='.' || (ch[i]>='0' && ch[i] <='9'))) {
-                    curr = curr + String.valueOf(ch[i++]);
+                    if(ch[i] == '.')
+                    {
+                        count ++;
+                        if(count <= 1)
+                        {
+                            curr = curr + String.valueOf(ch[i++]);
+                        }
+                        else{throw new MultipleDotInNumberException("The number contains more than one dot");
+                        }
+                    }
+                    else {
+                        curr = curr + String.valueOf(ch[i++]);
+                    }
                 }
                 if(i != ch.length-1) {
                     i--;

@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="65e8af8a-22ae-408b-9dcc-3aa110bf7a02" name="Default Changelist" comment="" />
+    <list default="true" id="65e8af8a-22ae-408b-9dcc-3aa110bf7a02" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/token/TokenValidation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SystemExpression/com/controller/ExpressionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SystemExpression/com/controller/ExpressionController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SystemExpression/com/token/Tokenizer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SystemExpression/com/token/Tokenizer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/controller/ExpressionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/controller/ExpressionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/convert/PostFixConvert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/convert/PostFixConvert.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/evalution/BinaryEvalution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/evalution/BinaryEvalution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/token/Tokenizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/token/Tokenizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tree/TreeCreation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tree/TreeCreation.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -139,22 +149,22 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1582632931823" />
-    <state width="1237" height="523" key="GridCell.Tab.0.bottom" timestamp="1582720463469">
+    <state width="1237" height="523" key="GridCell.Tab.0.bottom" timestamp="1582786469793">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="523" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1582720463469" />
-    <state width="1237" height="523" key="GridCell.Tab.0.center" timestamp="1582720463468">
+    <state width="1237" height="523" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1582786469793" />
+    <state width="1237" height="523" key="GridCell.Tab.0.center" timestamp="1582786469793">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="523" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1582720463468" />
-    <state width="1237" height="523" key="GridCell.Tab.0.left" timestamp="1582720463468">
+    <state width="1237" height="523" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1582786469793" />
+    <state width="1237" height="523" key="GridCell.Tab.0.left" timestamp="1582786469793">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="523" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1582720463468" />
-    <state width="1237" height="523" key="GridCell.Tab.0.right" timestamp="1582720463469">
+    <state width="1237" height="523" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1582786469793" />
+    <state width="1237" height="523" key="GridCell.Tab.0.right" timestamp="1582786469793">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="523" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1582720463469" />
+    <state width="1237" height="523" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1582786469793" />
     <state width="1237" height="204" key="GridCell.Tab.1.bottom" timestamp="1582697879531">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -183,6 +193,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="399" y="76" key="VcsDiffUtil.ChangesDialog/0.0.1280.680@0.0.1280.680" timestamp="1582634449220" />
+    <state x="337" y="166" key="com.intellij.ide.util.TipDialog" timestamp="1582780196807">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="337" y="166" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1582780196807" />
     <state x="450" y="259" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1582633369474">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -195,9 +209,9 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="297" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1582633482790" />
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1582715000218">
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1582777211039">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1582715000218" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1582777211039" />
   </component>
 </project>

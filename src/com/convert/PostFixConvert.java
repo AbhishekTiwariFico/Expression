@@ -10,7 +10,6 @@ import java.util.Stack;
 public class PostFixConvert {
 
     public ArrayList infixToPostfix(ArrayList<String> exp) {
-
         ArrayList<String> result = new ArrayList<String>();
         Stack<String> stack = new Stack<>();
         BinaryOperator b = new BinaryOperator();
